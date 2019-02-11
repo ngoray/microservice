@@ -1,0 +1,76 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+
+<a routerLink="/home1" routerLinkActive="active"><img src="assets/icon.png" height="180px" width="180px"></a>
+
+    <div class="position">
+      <div>
+        <h2 class="test">
+          <a routerLink="/home1" routerLinkActive="active">
+            <img src="assets/home.png" height="30px" width="30px">
+            Home
+          </a>
+        </h2>
+      </div>
+      <div>
+
+        <h2 class="test">
+          <a routerLink="/booking" routerLinkActive="active">
+            <img src="assets/booking.png" height="30px" width="30px">
+            Our Rooms
+          </a>
+        </h2>
+      </div>
+      <div>
+
+        <h2 class="test">
+          <a routerLink="/feedback" routerLinkActive="active">
+            <img src="assets/feedback.png" height="30px" width="30px">
+            Feedback
+          </a>
+        </h2>
+      </div>
+
+      <div>
+        <h2 class="test">
+          <a routerLink="/moreinfo" routerLinkActive="active">
+            <img src="assets/moreinfo.png" height="30px" width="30px">
+            More Info
+          </a>
+        </h2>
+      </div>
+
+      <div>
+        <h2 class="test">
+          <a routerLink="/track" routerLinkActive="active">
+            <img src="assets/view.png" height="30px" width="30px">
+            View Details
+          </a>
+        </h2>
+      </div>
+    </div>
+
+    <div class="position2">
+      <a href="facebook.com"  class="test"><img src="assets/facebook.png" height="40px" width="40px" hspace="2"></a>
+      <a href="instagram.com" class="test"><img src="assets/instagram.png" height="40px" width="40px" hspace="2"></a>
+      <a href="twitter.com" class="test"><img src="assets/twitter.png" height="40px" width="40px"></a>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+
+          <main [@routerTransition]="page.activatedRouteData.state">
+          <router-outlet #page="outlet">
+          </router-outlet>
+        </main>
+
+<div class="position3">
+          <a (click)="drawer.toggle()" class="tooltip">
+            <img src="assets/menu.png" height="45px" width="50px"> 
+            <span class="tooltiptext">Click to Navigate</span>
+          </a>
+            </div>
+
+  </div>
+
+</mat-drawer-container>
