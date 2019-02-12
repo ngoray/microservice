@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 
-const CommentSchema = new Schema ({
+const QuotesSchema = new Schema ({
     name:{
         type:String,
         required: [true,'Name field is required']
@@ -20,6 +20,6 @@ const CommentSchema = new Schema ({
 
 });
 
-const api = mongoose.model('comment', CommentSchema);
+const quotes = mongoose.model('quotes', QuotesSchema);
 
-module.exports = api;
+module.exports = quotes;

@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const MongoClient = require('mongodb').MongoClient;
 
 const app = express();
 
@@ -15,7 +14,7 @@ app.use(function(err, req, res, next){
     res.status(422)({error: err.message});
 });
 
-app.use('/api',require('./routes/api'));
+app.use('/api',require('./routes/comment'));
 
 
 app.listen(process.env.port||5000, function(){

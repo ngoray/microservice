@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express();
 const MongoClient = require('mongodb').MongoClient;
-const ObjectId = require('mongodb').ObjectID;
 const cors = require('cors');
-
  
 router.use(cors());
 

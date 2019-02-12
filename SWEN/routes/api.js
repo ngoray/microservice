@@ -17,44 +17,6 @@ MongoClient.connect('mongodb://test1:testone1@ds233320.mlab.com:33320/dormestati
         if (err) return console.log(err)
         db = database.db('dormestation');
     });
-
-
-// localhost:8080
-
-router.get('/room', function(req, res){     
-        db.collection('room').find().toArray( (err, results) => 
-        {res.send(results)}); 
-    }); 
-
-
-
-// localhost:5000 
-
-router.get('/comment', (req, res) => {
-    db.collection('quotes').find().toArray((err, results) => {
-            res.send(results)
-        });
-    });
-
-router.get('/comment/:name/:email/:rating/:comment', (req, res) => {
-
-    db.collection('quotes').save({
-            "name": req.params.name, 
-            "email": req.params.email, 
-            "rating": req.params.rating,
-            "comment": req.params.comment
-        }, (err, result) => {
-
-        });
-    });
-
-router.route('/quotes/:_id').delete(function(req, res) {         
-    db.collection('quotes').deleteOne( {"_id": ObjectId(req.params._id)} 
-        );   
-        res.redirect("/"); 
-    }); 
-
-
 //localhost:4000
 
 router.get('/booking/:username/:nric', (req, res2) => {

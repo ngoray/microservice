@@ -15,7 +15,7 @@ app.use(function(err, req, res, next){
     res.status(422)({error: err.message});
 });
 
-app.use('/api',require('./routes/api'));
+app.use('/api',require('./routes/room'));
 
 
 app.listen(process.env.port||8080, function(){
